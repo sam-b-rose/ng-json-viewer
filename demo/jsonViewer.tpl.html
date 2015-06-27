@@ -1,0 +1,21 @@
+<div id="main" class="beautify">
+  <div class="ui-editor">
+    <textarea class="ui-field json" id="editor" ng-model="editorText" ng-change="analyzeJson()" spellcheck="false" contenteditable="true"></textarea>
+    <div class="ui-resizer"></div>
+  </div>
+  <div class="ui-aside">
+    <div class="ui-notification" id="status"><b>Invalid JSON</b> &nbsp; 1&nbsp;error&nbsp;found</div>
+    <div class="ui-menu">
+      <div class="ui-menu-dropdown">
+        <div class="ui-menu-panel">
+          <div class="ui-menu-item ui-option" id="beautify">Beautify</div>
+          <div class="ui-menu-item ui-option" id="show-types">Show Types</div>
+          <div class="ui-menu-item ui-option" id="show-indexes">Show Indexes</div>
+          <div class="ui-menu-item about" style="display:none">About</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-treeview json" id="result">
+    </div>
+  </div>
+</div>

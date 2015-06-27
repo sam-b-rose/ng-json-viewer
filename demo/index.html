@@ -1,0 +1,95 @@
+<!doctype html>
+<html ng-app="demo-app" ng-strict-di>
+
+<head>
+  <meta charset="UTF-8">
+  <title>progress-bars angular.js module</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body ng-controller="MainCtrl as main">
+  <div class="main-container">
+    <header class="main-header">
+      <h1 class="page-title page-title_centered"><a href="http://samrose3.github.io/ng-json-viewers/demo/index.html">ng-json-viewer</a></h1>
+      <small class="page-subtitle page-subtitle_centered">module for <a href="https://angularjs.org/" target="_blank">Angular.js</a></small>
+    </header>
+    <section class="page-section">
+      <h2 class="section-header">JSON Viewer features:</h2>
+      <ul class="features-list">
+        <li class="features-list__item">Code folding</li>
+        <li class="features-list__item">Syntax coloring</li>
+        <li class="features-list__item">Display array indicies</li>
+        <li class="features-list__item">Display value type</li>
+      </ul>
+    </section>
+    <section class="page-section">
+      <h2 class="section-header">Demo:</h2>
+      <div class="json-container">
+        <jv-json-viewer></jv-json-viewer>
+      </div>
+    </section>
+    <section class="page-section">
+      <h2 class="section-header">Installation:</h2>
+      <h5>Via bower (preferred way):</h5>
+      <pre>
+        <code class="bash">bower install --save jv.json-viewer</code>
+      </pre>
+      <h5>Download zip package:</h5>
+      <div class="download-button-container">
+        <a class="button button_type_download" href="https://github.com/samrose3/ng-json-viewer/archive/master.zip" target="_blank">Download</a>
+      </div>
+    </section>
+    <section class="page-section">
+      <h2 class="section-header">Basic usage:</h2>
+      <ol class="usage-list">
+        <li class="usage-list__item">
+          Add module as dependency to your app:
+          <pre>
+            <code class="javascript">angular.module('your-app', ['jv.json-viewer']);</code>
+          </pre>
+        </li>
+        <li class="usage-list__item">
+          Add progress bar directive to template:
+          <pre>
+            <code class="html">&lt;jv-json-viewer data="json" string="true" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
+          </pre>
+        </li>
+
+        <li class="usage-list__item">
+          <a href="https://github.com/samrose3/ng-json-viewer/blob/master/README.md">Full API</a> of JSON Viewer at your disposal.
+        </li>
+      </ol>
+    </section>
+    <footer class="main-footer">
+      <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&repo=ng-json-viewer&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="_SamRose3_" data-hashtags="angular,progress-bar">Tweet</a>
+      <p class="footer-text footer-text_position_right">
+        Created by <a href="https://github.com/samrose3" target="_blank">Sam Rose</a>. Inspired by <a href="http://ricostacruz.com/nprogress/" target="_blank">Pavel Grinchenko - pg.progess-bars.js</a>
+      </p>
+    </footer>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <script src="../dist/jv.json-viewer.min.js"></script>
+  <script src="./main.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    //twitter follow button
+    ! function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        p = /^http:/.test(d.location) ? 'http' : 'https';
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    }(document, 'script', 'twitter-wjs');
+  </script>
+</body>
+
+</html>

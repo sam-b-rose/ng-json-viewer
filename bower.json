@@ -1,0 +1,35 @@
+{
+  "name": "jv.json-viewer",
+  "version": "0.0.1",
+  "authors": [
+    "Sam Rose <samrose3@gmail.com>"
+  ],
+  "description": "Robust JSON Viewer module for Angular.js",
+  "main": "dist/jv.json-viewer.js",
+  "keywords": [
+    "angular",
+    "module",
+    "json",
+    "viewer",
+    "parser",
+    "ng",
+    "jv"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "gulp",
+    "gulpfile.js",
+    ".jshintrc",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.2.25"
+  }
+}
