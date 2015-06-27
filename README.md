@@ -1,68 +1,53 @@
-# [progress-bars](https://github.com/PSDCoder/progress-bars) [![Build Status](https://travis-ci.org/PSDCoder/progress-bars.svg?branch=master)](https://travis-ci.org/PSDCoder/progress-bars)
+# [ng-json-viewer](https://github.com/samrose3/ng-json-viewer) [![Build Status](https://travis-ci.org/PSDCoder/progress-bars.svg?branch=master)](https://travis-ci.org/PSDCoder/progress-bars)
 
-## Changes history you can find [here](https://github.com/PSDCoder/progress-bars/blob/master/CHANGES.md) 
+## Changes history you can find [here](https://github.com/samrose3/ng-json-viewer/blob/master/CHANGES.md)
 
 # Main features
 
-* Independent from **$digest** cycle (don't run unnecessary cycles)
-* Can place many progress bars on one page
-* Full control of each bar
-* Custom progress-bar container
-* Simple customization via css
+* Code folding
+* Array index
+* Syntax highlighting
+* Display value type
 
 # Demo
 
-You can see demo on [this page](http://psdcoder.github.io/progress-bars/demo/index.html)
+You can see demo on [this page](http://samrose3.github.io/ng-json-viewer/demo/index.html)
 
 # Installation
 
 * Via bower (preferred way)
 
 ```bash
-bower install --save pg.progress-bars
+bower install --save jv.json-viewer
 ```
-* [Download zip package](https://github.com/PSDCoder/progress-bars/archive/master.zip)
+* [Download zip package](https://github.com/samrose3/ng-json-viewer/archive/master.zip)
 
 # Usage
 
 1. Add module as dependency to your app:
 
 ```javascript
-angular.module('your-app', ['pg.progress-bars']);
+angular.module('your-app', ['jv.json-viewer']);
 ```
 
-2. Add [**progress bar directive**](#progressbar-directive) to template:
+2. Add [**json viewer directive**](#json-viewer) to template:
 
 ```html
-<pg-progress-bar name="some-name"></pg-progress-bar>
+<jv-json-viewer></jv-json-viewer>
 ```
 
-3. Now you can inject [**ProgressBarsStorage**](#progressbarsstorage-service) service and get full control of your progress bars.  
-Just get it by name:
 
-```javascript
-var progressBar = ProgressBarsStorage.get('some-name');
-
-progressBar.start();
-
-setTimeout(function () {
-    //async result
-    progressBar.done();
-}, 1500);
-```
-
-4. Default progress bar styles you can find in [demo/styles.css](https://github.com/PSDCoder/progress-bars/blob/master/demo/styles.css) (at the bottom of file).
+4. Default JSON Viewer code colors you can find in [demo/jsonViewer.less](https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less) (at the top of file).
 
 # Module's components
 
-* [**progressBar directive**](#progressbar-directive) - directive for adding progress bar to the page.
-* [**ProgressBarFactory**](#progressbar-factory) - main progress bar constructor.
-* [**ProgressBarsSettings provider**](#progressbars-provider) provider - allows to define base classes for progress bar
-* [**ProgressBarsStorage service**](#progressbarsstorage-service) - all [**<pg-progress-bar></pg-progress-bar> directives**](#progressbar-directive) registers in this storage.
+* [**jsonViewer directive**](#jsonviewer-directive) - directive for adding progress bar to the page.
+* [**jsonViewer service**](#jsonViewer-service) - all [**<jv-json-viewer></jv-json-viewer> directives**](#jsonViewer-directive) parsing is done in this service.
 
-## progressBar directive
+## jsonViewer directive
 Directive will be replaced by its template. For customization different progress bars you can add classes to it. It will be merged with template classes.
 
+<!--
 #### Usage
 
 ```html
@@ -155,3 +140,5 @@ setTimeout(function () {
     completed = true;
 }, 5000);
 ```
+
+-->
