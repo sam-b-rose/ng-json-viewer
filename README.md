@@ -1,4 +1,4 @@
-# [ng-json-viewer](https://github.com/samrose3/ng-json-viewer) [![Build Status](https://travis-ci.org/PSDCoder/progress-bars.svg?branch=master)](https://travis-ci.org/PSDCoder/progress-bars)
+# [ng-json-viewer](https://github.com/samrose3/ng-json-viewer)
 
 ## Changes history you can find [here](https://github.com/samrose3/ng-json-viewer/blob/master/CHANGES.md)
 
