@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>progress-bars angular.js module</title>
+  <title>ng-json-viewer angular.js module</title>
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
@@ -28,7 +28,11 @@
     <section class="page-section">
       <h2 class="section-header">Demo:</h2>
       <div class="json-container">
-        <jv-json-viewer></jv-json-viewer>
+        <jv-json-viewer editor="main.showEditor" data="main.jsonData"></jv-json-viewer>
+      </div>
+      <div class="download-button-container">
+        <a class="button button_type_download" ng-click="main.toggleEditor()">Toggle Editor</a>
+        <a class="button button_type_download" ng-click="main.useTestJson()">Test Data</a>
       </div>
     </section>
     <section class="page-section">
