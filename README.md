@@ -47,13 +47,13 @@ angular.module('your-app', ['jv.json-viewer']);
 ## jsonViewer directive
 Directive will be replaced by its template. For customization different progress bars you can add classes to it. It will be merged with template classes.
 
-<!--
+
 #### Usage
 
 ```html
-<pg-progress-bar name="main"></pg-progress-bar>
+<ng-json-viewer editor="true || false" data="json || string"></ng-json-viewer>
 ```
-
+<!--
 #### Directive params
 
 |Name|Binding Type|Default value|Description|Example|

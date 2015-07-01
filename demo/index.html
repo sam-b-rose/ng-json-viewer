@@ -8,6 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="../dist/jsonViewer.css" />
 </head>
 
 <body ng-controller="MainCtrl as main">
@@ -56,9 +57,15 @@
           </pre>
         </li>
         <li class="usage-list__item">
-          Add progress bar directive to template:
+          Add jsonViewer.css to head of your project:
           <pre>
-            <code class="html">&lt;jv-json-viewer data="json" string="true" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
+            <code class="html">&lt;link rel="stylesheet" href="../dist/jsonViewer.css" /&gt;</code>
+          </pre>
+        </li>
+        <li class="usage-list__item">
+          Add JSON Viewer directive to template:
+          <pre>
+            <code class="html">&lt;jv-json-viewer data="yourData" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
           </pre>
         </li>
 

@@ -1,18 +1,19 @@
 {
-  "name": "pg.progress-bars",
+  "name": "jv.json-viewer",
   "version": "0.0.1",
-  "description": "Multiple progress bars module for angular js",
+  "description": "A JSON Viewer for your Angular project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PSDCoder/progress-bars"
+    "url": "https://github.com/samrose3/ng-json-viewer"
   },
-  "main": "dist/pg.progress-bars.js",
+  "main": "dist/jv.json-viewer.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
     "del": "~1.2.0",
     "gulp": "~3.9.0",
+    "gulp-angular-templatecache": "^1.7.0",
     "gulp-autoprefixer": "~2.3.1",
     "gulp-bump": "~0.3.1",
     "gulp-concat": "~2.6.0",
@@ -44,6 +45,6 @@
     "angular",
     "pg"
   ],
-  "author": "Pavel Grinchenko <psdcoder@gmail.com>",
+  "author": "Sam Rose <samrose3@gmail.com>",
   "license": "MIT"
 }
