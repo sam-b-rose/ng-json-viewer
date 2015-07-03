@@ -25,15 +25,17 @@ bower install --save jv.json-viewer
 
 # Usage
 
-1. Add module as dependency to your app:
+Add module as dependency to your app:
 ```javascript
 angular.module('your-app', ['jv.json-viewer']);
 ```
-2. Add [**json viewer directive**](#json-viewer) to template:
+
+Add [**json viewer directive**](#json-viewer) to template:
 ```html
 <jv-json-viewer></jv-json-viewer>
 ```
-3. Default JSON Viewer code colors you can find in [demo/jsonViewer.less](https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less) (at the top of file).
+
+Default JSON Viewer code colors you can find in [demo/jsonViewer.less](https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less) (at the top of file).
 
 # Module's components
 
