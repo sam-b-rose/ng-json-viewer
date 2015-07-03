@@ -1,3 +1,3 @@
 module.exports = function (gulp, $, utils, config) {
-    gulp.task('default', ['lint', 'js', 'test']);
+    gulp.task('default', ['lint', 'template', 'js', 'test']);
 };

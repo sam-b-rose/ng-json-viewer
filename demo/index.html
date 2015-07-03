@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>progress-bars angular.js module</title>
+  <title>ng-json-viewer angular.js module</title>
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="../dist/jsonViewer.css" />
 </head>
 
 <body ng-controller="MainCtrl as main">
@@ -28,7 +29,11 @@
     <section class="page-section">
       <h2 class="section-header">Demo:</h2>
       <div class="json-container">
-        <jv-json-viewer></jv-json-viewer>
+        <jv-json-viewer editor="main.showEditor" data="main.jsonData"></jv-json-viewer>
+      </div>
+      <div class="download-button-container">
+        <a class="button button_type_download" ng-click="main.toggleEditor()">Toggle Editor</a>
+        <a class="button button_type_download" ng-click="main.useTestJson()">Test Data</a>
       </div>
     </section>
     <section class="page-section">
@@ -52,9 +57,15 @@
           </pre>
         </li>
         <li class="usage-list__item">
-          Add progress bar directive to template:
+          Add jsonViewer.css to head of your project:
           <pre>
-            <code class="html">&lt;jv-json-viewer data="json" string="true" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
+            <code class="html">&lt;link rel="stylesheet" href="../dist/jsonViewer.css" /&gt;</code>
+          </pre>
+        </li>
+        <li class="usage-list__item">
+          Add JSON Viewer directive to template:
+          <pre>
+            <code class="html">&lt;jv-json-viewer data="yourData" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
           </pre>
         </li>
 
@@ -66,10 +77,9 @@
     <footer class="main-footer">
       <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
       <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&repo=ng-json-viewer&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="_SamRose3_" data-hashtags="angular,progress-bar">Tweet</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="_SamRose3_" data-hashtags="angular,ng-json-viewer">Tweet</a>
       <p class="footer-text footer-text_position_right">
-        Created by <a href="https://github.com/samrose3" target="_blank">Sam Rose</a>. Inspired by <a href="http://ricostacruz.com/nprogress/" target="_blank">Pavel Grinchenko - pg.progess-bars.js</a>
-      </p>
+        Created by <a href="https://github.com/samrose3" target="_blank">Sam Rose</a>.
     </footer>
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>

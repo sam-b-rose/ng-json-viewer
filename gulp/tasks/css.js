@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = function (gulp, $, utils, config) {
     gulp.task('css', function () {
-        return gulp.src(path.join(config.paths.demoFolder, '*.less'))
+        return gulp.src(config.paths.less)
             .pipe($.plumber())
             .pipe($.less())
             .pipe($.autoprefixer({
@@ -11,6 +11,6 @@ module.exports = function (gulp, $, utils, config) {
             .pipe($.rename({
                 extname: '.css'
             }))
-            .pipe(gulp.dest(config.paths.demoFolder));
+            .pipe(gulp.dest(config.paths.outputFolder));
     });
 };

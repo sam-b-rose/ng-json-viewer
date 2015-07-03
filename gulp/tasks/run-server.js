@@ -11,4 +11,3 @@ module.exports = function (gulp, $, utils, config) {
             .pipe($.notify('Dev server was started on: http://' + config.server.host + ':' + config.server.port));
     });
 };
-

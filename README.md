@@ -9,6 +9,7 @@
 * Syntax highlighting
 * Display value type
 
+
 # Demo
 
 You can see demo on [this page](http://samrose3.github.io/ng-json-viewer/demo/index.html)
@@ -25,35 +26,30 @@ bower install --save jv.json-viewer
 # Usage
 
 1. Add module as dependency to your app:
-
 ```javascript
 angular.module('your-app', ['jv.json-viewer']);
 ```
-
 2. Add [**json viewer directive**](#json-viewer) to template:
-
 ```html
 <jv-json-viewer></jv-json-viewer>
 ```
-
-
-4. Default JSON Viewer code colors you can find in [demo/jsonViewer.less](https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less) (at the top of file).
+3. Default JSON Viewer code colors you can find in [demo/jsonViewer.less](https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less) (at the top of file).
 
 # Module's components
 
 * [**jsonViewer directive**](#jsonviewer-directive) - directive for adding progress bar to the page.
-* [**jsonViewer service**](#jsonViewer-service) - all [**<jv-json-viewer></jv-json-viewer> directives**](#jsonViewer-directive) parsing is done in this service.
+* [**jsonViewer service**](#jsonViewer-service) - all [**<jv-json-viewer></jv-json-viewer> directive**](#jsonViewer-directive) parsing is done in this service.
 
 ## jsonViewer directive
-Directive will be replaced by its template. For customization different progress bars you can add classes to it. It will be merged with template classes.
+Directive will be replaced by its template. For customization different JSON Viewer styles, you can add classes to it or modify the less variables in jsonViewer.less.
 
-<!--
+
 #### Usage
 
 ```html
-<pg-progress-bar name="main"></pg-progress-bar>
+<ng-json-viewer editor="true || false" data="json || string"></ng-json-viewer>
 ```
-
+<!--
 #### Directive params
 
 |Name|Binding Type|Default value|Description|Example|

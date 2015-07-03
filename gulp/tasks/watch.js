@@ -6,4 +6,3 @@ module.exports = function (gulp, $, utils, config) {
         gulp.watch(path.join(config.paths.demoFolder, '*.less'), ['css']);
     });
 };
-
