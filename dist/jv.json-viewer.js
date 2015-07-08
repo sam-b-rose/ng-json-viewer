@@ -1,4 +1,4 @@
-/*! jv.json-viewer v0.2.0 | Sam Rose <samrose3@gmail.com> | (c) 2015 */
+/*! jv.json-viewer v0.2.1 | Sam Rose <samrose3@gmail.com> | (c) 2015 */
 angular.module('jv.json-viewer', []);
 
 (function() {
