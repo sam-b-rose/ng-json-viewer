@@ -1,109 +1,105 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>ng-json-viewer by samrose3</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">ng-json-viewer</h1>
-      <h2 class="project-tagline">An AngularJS directive for viewing JSON.</h2>
-      <a href="https://github.com/samrose3/ng-json-viewer" class="btn">View on GitHub</a>
-      <a href="https://github.com/samrose3/ng-json-viewer/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/samrose3/ng-json-viewer/tarball/master" class="btn">Download .tar.gz</a>
+<!doctype html>
+<html ng-app="demo-app" ng-strict-di>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ng-json-viewer angular.js module</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
+  <link rel="stylesheet" href="/demo/styles.css" />
+  <link rel="stylesheet" href="/dist/jsonViewer.css" />
+</head>
+
+<body ng-controller="MainCtrl as main">
+  <div class="main-container">
+    <header class="main-header">
+      <h1 class="page-title page-title_centered"><a href="http://github.com/samrose3/ng-json-viewer">ng-json-viewer</a></h1>
+      <small class="page-subtitle page-subtitle_centered">module for <a href="https://angularjs.org/" target="_blank">Angular.js</a></small>
+    </header>
+    <section class="page-section">
+      <h2 class="section-header">JSON Viewer features:</h2>
+      <ul class="features-list">
+        <li class="features-list__item">Code folding</li>
+        <li class="features-list__item">Syntax coloring</li>
+        <li class="features-list__item">Display array indicies</li>
+        <li class="features-list__item">Display value type</li>
+      </ul>
     </section>
-
-    <section class="main-content">
-      <h2>
-<a id="changes-history-you-can-find-here" class="anchor" href="#changes-history-you-can-find-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changes history you can find <a href="https://github.com/samrose3/ng-json-viewer/blob/master/CHANGES.md">here</a>
-</h2>
-
-<h1>
-<a id="main-features" class="anchor" href="#main-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main features</h1>
-
-<ul>
-<li>Code folding</li>
-<li>Array index</li>
-<li>Syntax highlighting</li>
-<li>Display value type</li>
-</ul>
-
-<h1>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
-
-<p>You can see demo on <a href="http://samrose3.github.io/ng-json-viewer/demo/index.html">this page</a></p>
-
-<h1>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
-
-<ul>
-<li>Via bower (preferred way)</li>
-</ul>
-
-<div class="highlight highlight-bash"><pre>bower install --save jv.json-viewer</pre></div>
-
-<ul>
-<li><a href="https://github.com/samrose3/ng-json-viewer/archive/master.zip">Download zip package</a></li>
-</ul>
-
-<h1>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
-
-<ol>
-<li>Add module as dependency to your app:</li>
-</ol>
-
-<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s"><span class="pl-pds">'</span>your-app<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>jv.json-viewer<span class="pl-pds">'</span></span>]);</pre></div>
-
-<ol>
-<li>Add <a href="#json-viewer"><strong>json viewer directive</strong></a> to template:</li>
-</ol>
-
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">jv</span><span class="pl-e">-json-viewer</span>&gt;&lt;/<span class="pl-ent">jv</span><span class="pl-e">-json-viewer</span>&gt;</pre></div>
-
-<ol>
-<li>Default JSON Viewer code colors you can find in <a href="https://github.com/samrose3/ng-json-viewer/blob/master/demo/jsonViewer.less">demo/jsonViewer.less</a> (at the top of file).</li>
-</ol>
-
-<h1>
-<a id="modules-components" class="anchor" href="#modules-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Module's components</h1>
-
-<ul>
-<li>
-<a href="#jsonviewer-directive"><strong>jsonViewer directive</strong></a> - directive for adding progress bar to the page.</li>
-<li>
-<a href="#jsonViewer-service"><strong>jsonViewer service</strong></a> - all <a href="#jsonViewer-directive"><strong> directives</strong></a> parsing is done in this service.</li>
-</ul>
-
-<h2>
-<a id="jsonviewer-directive" class="anchor" href="#jsonviewer-directive" aria-hidden="true"><span class="octicon octicon-link"></span></a>jsonViewer directive</h2>
-
-<p>Directive will be replaced by its template. For customization different progress bars you can add classes to it. It will be merged with template classes.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>2015, Sam Rose (<a href="https://github.com/samrose3" class="user-mention">@samrose3</a>), project architecture inspired by Pavel Grinchenko's progress-bars.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with ng-json-viewer? Check out the documentation at <a href="https://samrose3.github.com/ng-json-viewer/demo/">https://samrose3.github.com/ng-json-viewer/demo/</a> or contact <a href="mailto:samrose3@gmail.com">samrose3@gmail.com</a>.</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/samrose3/ng-json-viewer">ng-json-viewer</a> is maintained by <a href="https://github.com/samrose3">samrose3</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
+    <section class="page-section">
+      <h2 class="section-header">Demo:</h2>
+      <div class="json-container">
+        <jv-json-viewer editor="main.showEditor" data="main.jsonData"></jv-json-viewer>
+      </div>
+      <div class="download-button-container">
+        <a class="button button_type_download" ng-click="main.toggleEditor()">Toggle Editor</a>
+        <a class="button button_type_download" ng-click="main.useTestJson()">Test Data</a>
+      </div>
     </section>
+    <section class="page-section">
+      <h2 class="section-header">Installation:</h2>
+      <h5>Via bower (preferred way):</h5>
+      <pre>
+        <code class="bash">bower install --save jv.json-viewer</code>
+      </pre>
+      <h5>Download zip package:</h5>
+      <div class="download-button-container">
+        <a class="button button_type_download" href="https://github.com/samrose3/ng-json-viewer/archive/master.zip" target="_blank">Download</a>
+      </div>
+    </section>
+    <section class="page-section">
+      <h2 class="section-header">Basic usage:</h2>
+      <ol class="usage-list">
+        <li class="usage-list__item">
+          Add module as dependency to your app:
+          <pre>
+            <code class="javascript">angular.module('your-app', ['jv.json-viewer']);</code>
+          </pre>
+        </li>
+        <li class="usage-list__item">
+          Add jsonViewer.css to head of your project:
+          <pre>
+            <code class="html">&lt;link rel="stylesheet" href="../dist/jsonViewer.css" /&gt;</code>
+          </pre>
+        </li>
+        <li class="usage-list__item">
+          Add JSON Viewer directive to template:
+          <pre>
+            <code class="html">&lt;jv-json-viewer data="yourData" editor="false"&gt;&lt;/jv-json-viewer&gt;</code>
+          </pre>
+        </li>
 
-  
-  </body>
+        <li class="usage-list__item">
+          <a href="https://github.com/samrose3/ng-json-viewer/blob/master/README.md">Full API</a> of JSON Viewer at your disposal.
+        </li>
+      </ol>
+    </section>
+    <footer class="main-footer">
+      <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user=samrose3&repo=ng-json-viewer&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="_SamRose3_" data-hashtags="angular,ng-json-viewer">Tweet</a>
+      <p class="footer-text footer-text_position_right">
+        Created by <a href="https://github.com/samrose3" target="_blank">Sam Rose</a>.
+    </footer>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <script src="/dist/jv.json-viewer.min.js"></script>
+  <script src="/main.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    //twitter follow button
+    ! function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        p = /^http:/.test(d.location) ? 'http' : 'https';
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    }(document, 'script', 'twitter-wjs');
+  </script>
+</body>
+
 </html>
-
